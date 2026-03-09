@@ -1,10 +1,5 @@
 # 🏦 Real-Time Bank Fraud Streaming Pipeline & GenAI Investigator
 
-![Architecture: Event-Driven](https://img.shields.io/badge/Architecture-Event--Driven-blue)
-![Deployment: Docker](https://img.shields.io/badge/Deployment-Docker-2496ED)
-![Model: XGBoost](https://img.shields.io/badge/Model-XGBoost-orange)
-![GenAI: Gemini](https://img.shields.io/badge/GenAI-Google%20Gemini-8E75B2)
-
 ## 📌 Enterprise Overview
 An end-to-end, event-driven machine learning microservice designed to process financial transactions in real-time. This pipeline decouples data ingestion from heavy ML compute, predicting fraud probabilities on the fly while handling severe class imbalances. 
 
@@ -39,8 +34,9 @@ Data Generator ➔ Kafka Topic ➔ Consumer + Redis Cache ➔ FastAPI + XGBoost 
 
 **1. Clone the repository & Install required libraries**
 ```bash
-git clone https://github.com/Aryanvaidh1712/fraud-detection-api/
+git clone https://github.com/Aryanvaidh1712/real-time-fraud-pipeline
 cd real-time-fraud-pipeline
+pip install -r requirements.txt
 ```
 
 **2. Create a `.env` file in root directory & Add your credentials**
@@ -58,7 +54,7 @@ POSTGRES_DB="fraud_db"
 docker-compose up -d
 ```
 
-**3. Start the Infrastructure (Docker)**
+**4. Start the Infrastructure (Docker)**
 You will need to open **4 separate terminal** windows to run the distributed system:
 
 * **Terminal 1: Start the AI Brain (FastAPI)**
